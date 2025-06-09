@@ -1,0 +1,16 @@
+# crews/security_crew/config/tasks.yaml
+url_analysis_task:
+  description: >
+    Analyze the URL: {url} for security threats.
+    Provide a trust level on a scale of 1 to 10 and a detailed threat assessment.
+  expected_output: >
+    Trust level (1-10) and a detailed threat assessment.
+  agent: url_analyzer_agent
+
+soc_communication_task:
+  description: >
+    Use the tool 'soc_communicator' to send analysis to SOC admin.
+    Action must be exactly: soc_communicator
+  expected_output: >
+    SOC admin response with severity and action recommendation.
+  agent: soc_communication_agent
